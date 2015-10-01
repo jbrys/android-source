@@ -37,7 +37,7 @@ public class Methods extends Object {
 		 ************************************************/
 
 		// You are free to modify the return statement
-		return false;
+		return !original;
 	}
 
 	/*
@@ -60,6 +60,13 @@ public class Methods extends Object {
 		/************************************************
 		 * Your work goes here
 		 ************************************************/
+
+		for (int i = 0; i < numbers.length; i++){
+			if (numbers[i]<0)
+				numbers[i] = Math.abs(numbers[i]);
+			else
+				numbers[i] = 0 - numbers[i];
+		}
 	}
 
 
@@ -92,7 +99,18 @@ public class Methods extends Object {
 		 ************************************************/
 
 		// You are free to modify the return statement
-		return new boolean [0];
+
+		boolean results[] = new boolean[someNumbers.length];
+
+		for (int i = 0; i < someNumbers.length; i++){
+			if (someNumbers[i] > floor)
+				results[i] = true;
+			else
+				results[i] = false;
+		}
+
+
+		return results;
 	}
 
 	/*
@@ -118,8 +136,23 @@ public class Methods extends Object {
 		 * Your work goes here
 		 ************************************************/
 
+		int minValue = someNumbers[0];
+		int maxValue = someNumbers[0];
+		
+		//Get the min
+		for(int i = 1; i < someNumbers.length; i++ ){
+			if (someNumbers[i] < minValue)
+				minValue = someNumbers[i];
+		}
+
+		//Get the max
+		for(int i = 1; i < someNumbers.length; i++ ){
+			if (someNumbers[i] > maxValue)
+				maxValue = someNumbers[i];
+		}
+
 		// You are free to modify the return statement
-		return new int[2];
+		return new int[] {minValue, maxValue};
 	}
 
 
