@@ -18,6 +18,12 @@ class Ensemble extends Object {
 	 */
 	Ensemble(Artist... artists){
 		mArtists = artists;
+		
+		mName = mArtists[0].mFirstName + ' ' + mArtists[0].mLastName;
+		
+
+		//new Ensemble(null, artists);
+
 	}
 	/************************************************
 	 *	ASSIGNMENT:
@@ -36,10 +42,11 @@ class Ensemble extends Object {
 	 * @param artists variable length artists (Artist... artists)
 	 */
 	Ensemble(String name, Artist... artists){
-		new Ensemble(artists);
+
+		mArtists = artists;
 
 		if (name == null){
-			mName = artists[0].firstName + artists[0].lastName;
+			mName = mArtists[0].mFirstName + ' ' + mArtists[0].mLastName;
 		} else {
 			mName = name;
 		}

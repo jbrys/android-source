@@ -17,8 +17,8 @@ class Song extends Object {
 	 */
 	Song(){
 		mEnsemble = new Ensemble(new Artist("MC", "Hammer"));
-		mTitle = "U Can't Touch This"
-		mYearReleased = 1990
+		mTitle = "U Can't Touch This";
+		mYearReleased = 1990;
 	}
 	/************************************************
 	 *	ASSIGNMENT:
