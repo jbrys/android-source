@@ -20,7 +20,7 @@ public class Color extends Object {
 		this(null, red, green, blue);
 	}
 
-	Color(String name, int red, int green, int blue) {
+	public Color(String name, int red, int green, int blue) {
 		mName = name;
 		mRed = red;
 		mGreen = green;

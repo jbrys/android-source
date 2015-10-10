@@ -3,6 +3,7 @@ package com.bloc.securitypackages.fruit;
 /************************************************
  *	YOU MAY MODIFY THIS FILE AND/OR ITS LOCATION
 /************************************************/
+import com.bloc.securitypackages.Color;
 
 import com.bloc.securitypackages.colors.Color;
 
@@ -33,7 +34,7 @@ public abstract class Fruit extends Object {
 		this(name, calories, color, 0d);
 	}
 
-	Fruit(String name, int calories, Color color, double weight) {
+	protected Fruit(String name, int calories, Color color, double weight) {
 		this.mName = name;
 		this.mCalories = calories;
 		this.mColor = color;
@@ -56,7 +57,7 @@ public abstract class Fruit extends Object {
 		mCalories = calories;
 	}
 
-	private Color getColor() {
+	protected Color getColor() {
 		return mColor;
 	}
 
@@ -64,11 +65,11 @@ public abstract class Fruit extends Object {
 		mColor = color;
 	}
 
-	double getWeight() {
+	protected double getWeight() {
 		return mWeight;
 	}
 
-	private void setWeight(double weight) {
+	protected void setWeight(double weight) {
 		mWeight = weight;
 	}
 }

@@ -3,9 +3,10 @@ package com.bloc.securitypackages.colors;
 /************************************************
  *	YOU MAY MODIFY THIS FILE AND/OR ITS LOCATION
 /************************************************/
+import com.bloc.securitypackages.Color;
 
-class OrangeRed extends Color {
-	OrangeRed() {
+public class OrangeRed extends Color {
+	public OrangeRed() {
 		super(OrangeRed.class.getSimpleName(), 255, 69, 0);
 	}
 }
