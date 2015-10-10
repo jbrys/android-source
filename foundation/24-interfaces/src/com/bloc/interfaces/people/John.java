@@ -4,6 +4,7 @@ package com.bloc.interfaces.people;
  *	ASSIGNMENT:
  *	Have John implement the Driver interface
 /************************************************/
+import com.bloc.interfaces.people.hobbies.Driver;
 
 public class John extends Person implements Driver{
 	public John() {

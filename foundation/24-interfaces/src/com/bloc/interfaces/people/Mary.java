@@ -4,6 +4,7 @@ package com.bloc.interfaces.people;
  *	ASSIGNMENT:
  *	Have Mary implement the Skydiver interface
 /************************************************/
+import com.bloc.interfaces.people.hobbies.Skydiver;
 
 public class Mary extends Person implements Skydiver {
 	public Mary() {
