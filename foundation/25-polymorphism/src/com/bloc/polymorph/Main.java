@@ -16,26 +16,33 @@ public class Main extends Object {
 	 	 *	ASSIGNMENT:
 	 	 *	Replace the operations below by employing polymorphism
 		/************************************************/
+		Pet[] pets = {dog, cat, bird, snake, tarantula};
 
-		dog.feed();
-		dog.wash();
-		dog.exercise();
+		for (Pet pet : pets){
+			pet.feed();
+			pet.wash();
+			pet.exercise();
+		}
 
-		cat.feed();
-		cat.wash();
-		cat.exercise();
+		// dog.feed();
+		// dog.wash();
+		// dog.exercise();
 
-		bird.feed();
-		bird.wash();
-		bird.exercise();
+		// cat.feed();
+		// cat.wash();
+		// cat.exercise();
 
-		snake.feed();
-		snake.wash();
-		snake.exercise();
+		// bird.feed();
+		// bird.wash();
+		// bird.exercise();
 
-		tarantula.feed();
-		tarantula.wash();
-		tarantula.exercise();
+		// snake.feed();
+		// snake.wash();
+		// snake.exercise();
+
+		// tarantula.feed();
+		// tarantula.wash();
+		// tarantula.exercise();
 
 		/************************************************
 	 	 *	ASSIGNMENT:
