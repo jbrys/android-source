@@ -60,8 +60,9 @@ public class FavoritePastries {
 		if (this.getRatingForPastry(pastry) != -1){
 
 			this.removePastry(pastry);
-			pastryRatings.put(rating, pastryList);
-			return;
+			addPastry(pastry, rating);
+			// pastryRatings.put(rating, pastryList);
+			// return;
 		}
 		
 		pastryList.add(pastry);
@@ -89,6 +90,7 @@ public class FavoritePastries {
 
 			if(pastryList.contains(pastry)){
 				
+				pastryRatings.remove(key);
 				pastryList.remove(pastry);
 				pastryRatings.put(key, pastryList);
 
