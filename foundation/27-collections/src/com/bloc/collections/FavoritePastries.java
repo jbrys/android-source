@@ -25,7 +25,7 @@ public class FavoritePastries {
 	 *	between rating and pastry: HashMap<Integer, List<Pastry>>
 	/************************************************/
 	static private HashMap<Integer, List<Pastry>> pastryRatings;
-	private List<Pastry> pastryList;
+	// private List<Pastry> pastryList;
 
 	public FavoritePastries() {
 		pastryRatings = new HashMap<Integer, List<Pastry>>();
@@ -48,25 +48,26 @@ public class FavoritePastries {
 	 */
 	public void addPastry(Pastry pastry, int rating) {
 		
+		List<Pastry> list;
 		// check if any pastries have this rating. If so grab the current ratings. 
 		// If not, make a new list.
 		if (pastryRatings.containsKey(rating)){
-			pastryList = pastryRatings.get(rating);
+			list = pastryRatings.get(rating);
 		} else {
-			pastryList = new ArrayList<Pastry>();
+			list = new ArrayList<Pastry>();
 		}
 
 		// check if this pastry has already been rated.
+		// if so, update it
 		if (this.getRatingForPastry(pastry) != -1){
 
 			this.removePastry(pastry);
 			addPastry(pastry, rating);
-			// pastryRatings.put(rating, pastryList);
-			// return;
-		}
+		} else {
 		
-		pastryList.add(pastry);
-		pastryRatings.put(rating, pastryList);
+			list.add(pastry);
+			pastryRatings.put(rating, list);
+		}
 		
 	}
 
@@ -84,15 +85,17 @@ public class FavoritePastries {
 	 */
 	public boolean removePastry(Pastry pastry) {
 		
+		List<Pastry> list;
+
 		for (int key : pastryRatings.keySet()){
 			
-			pastryList = pastryRatings.get(key);
+			list = pastryRatings.get(key);
 
-			if(pastryList.contains(pastry)){
+			if(list.contains(pastry)){
 				
 				pastryRatings.remove(key);
-				pastryList.remove(pastry);
-				pastryRatings.put(key, pastryList);
+				list.remove(pastry);
+				pastryRatings.put(key, list);
 
 				return true;
 			} 
@@ -118,15 +121,17 @@ public class FavoritePastries {
 	 */
 	public int getRatingForPastry(Pastry pastry) {
 		
+		int retVal = -1;
+		List<Pastry> list;
 		for (int rating : pastryRatings.keySet()){
-			pastryList = pastryRatings.get(rating);
+			list = pastryRatings.get(rating);
 
-			if(pastryList.contains(pastry)){
-				return rating;
-			} 
+			if(list.contains(pastry)){
+				retVal = rating;
+			}
 		}
 
-		return -1;
+		return retVal;
 
 	}
 
@@ -147,9 +152,9 @@ public class FavoritePastries {
 	 *         found
 	 */
 	public Collection<Pastry> getPastriesForRating(int rating) {
-		pastryList = pastryRatings.get(rating);
+		List<Pastry> list = pastryRatings.get(rating);
 
-		return pastryList;
+		return rating == -1 ? new ArrayList<Pastry>() : list;
 	}
 
 }
